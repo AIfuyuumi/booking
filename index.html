@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Booking</title>
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
 
@@ -14,7 +15,7 @@
     <header>
         <div class="header w">
             <a class="logo" href="">
-                Miao<span>.com</span>
+                Fuyuumi<span>.com</span>
                 <span>校园会场预定</span>
             </a>
 
@@ -76,12 +77,12 @@
             <!-- 推广注册 -->
             <div class="register">
                 <p class="text">注册、预定，为梦想买单</p>
-                <p class="title">在Miao.com预定您的场馆</p>
+                <p class="title">在Fuyuumi.com预定您的场馆</p>
                 <a href="javascript:void(0);" class="more">了解更多</a>
             </div>
 
             <!-- 订阅推广 -->
-            <div class="subscription">
+            <div class="subscription" id="test">
                 <svg class="svgImg" height="32" width="32" viewBox="0 0 57 57">
                     <path fill="#FBB910" d="M28.5 57C12.8 57 0 44.2 0 28.5S12.8 0 28.5 0 57 12.8 57 28.5 44.2 57 28.5 57"></path>
                     <g opacity=".7">
@@ -98,6 +99,12 @@
                 <p class="text">
                     订阅即可看到优惠价格
                 </p>
+                <i class="iconfont icon-jiantoushang"></i>                
+                <i class="iconfont icon-jiantouxia"></i>
+                <div class="email">
+                    <input type="email" name="" id="" class="emailInput" placeholder="输入电子邮箱地址">
+                    <button class="button">订阅电子报!</button>
+                </div>
             </div>
 
             <!-- 好友推广 -->
@@ -118,7 +125,7 @@
                     </g>
                 </svg>
                 <p class="text">
-                    推荐朋友使用Miao.com，你们都能赚取现金奖励！
+                    推荐朋友使用Fuyuumi.com，你们都能赚取现金奖励！
                 </p>
                 <a href="javascript:void(0);" class="button">
                     开始赚取奖励!
@@ -177,82 +184,35 @@
             </div>
             <!-- 推荐2 -->
             <div class="recommendTwo">
-                <img class="img" src="./images/test1.JPG" alt="">
+                <img class="img" src="./images/test2.JPG" alt="">
             </div>
 
         </div>
     </div>
 
+    <div class="playground w clearfix">
+        <div class="title">
+            <p></p>
+        </div>
+        <div class="boxOne">
+            <img src="./images/test2.jpg" alt="" class="img">
+        </div>
+        <div class="boxTwo">
+            <img src="./images/test2.jpg" alt="" class="img">
+        </div>
+        <div class="boxThree">
+            <img src="./images/test2.jpg" alt="" class="img">
+        </div>
+    </div>
+
+    <div class="classRoom w">
+        <div class="title">
+
+        </div>
+    </div>
 
 </body>
 
 </html>
-<script src="./js/jquery-1.8.3.min.js"></script>
-<script>
-    $(function () {
-        // 头部菜单按钮
-        $("header .menu a").on("click", function () {
-            $(this).css("backgroundColor", "rgba(255, 255, 255, 0.3)");
-            $(this).parent().siblings().find("a").css("backgroundColor", "transparent");
-        })
-
-        // 中部搜索
-        $(".middleLeft .submit").on("click", function () {
-            var strJSON = {};
-            $.each($('.middleLeft .content').serializeArray(), function () {
-                strJSON[this.name] = this.value;
-            });
-            // 取得表达信息并打印
-            console.log(JSON.stringify(strJSON));
-        })
-
-
-
-        // 推荐预定时间
-        $(function () {
-            var dateStr = "";
-            var date = new Date();
-            var dateSeven = new Date(new Date() - (-5 * 24 * 60 * 60 * 1000));
-            var mon = date.getMonth() + 1;
-            var monSeven = dateSeven.getMonth() + 1;
-            var day = date.getDate();
-            var daySeven = dateSeven.getDate();
-            var week = weekNumToStr(date.getDay());
-            var weekSeven = weekNumToStr(dateSeven.getDay());
-
-            dateStr = mon + "月" + day + "日 星期" + week + " 至 " + monSeven + "月" + daySeven + "日 星期" +
-                weekSeven + " 推荐预定:";
-            $(".middleRight .time").text(dateStr);
-        }());
-
-        function weekNumToStr(week) {
-            switch (week) {
-                case 0:
-                    return "日";
-                    break;
-                case 1:
-                    return "一";
-                    break;
-                case 2:
-                    return "二";
-                    break;
-                case 3:
-                    return "三";
-                    break;
-                case 4:
-                    return "四";
-                    break;
-                case 5:
-                    return "五";
-                    break;
-                case 6:
-                    return "六";
-                    break;
-            }
-        }
-
-
-
-
-    })
-</script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/index.js"></script>
