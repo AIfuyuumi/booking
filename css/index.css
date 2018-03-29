@@ -2,6 +2,80 @@
   width: 1100px;
   margin: 0 auto;
 }
+.ovfHiden {
+  overflow: hidden;
+  height: 100%;
+}
+.keep {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.keep .box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 446px;
+  height: 362px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-top: 0;
+}
+.keep .box .login,
+.keep .box .register {
+  float: left;
+  width: 50%;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+}
+.keep .box .register {
+  border-left: 0;
+}
+.keep .box .content {
+  float: left;
+  margin-top: 20px;
+  padding-left: 34px;
+}
+.keep .box .content .loginContent {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 24px;
+}
+.keep .box .content .loginContent .idInput {
+  padding-left: 8px;
+  width: 360px;
+  height: 32px;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+}
+.keep .box .content .loginContent .submit {
+  margin-top: 18px;
+  width: 370px;
+  height: 37px;
+  background-color: #0077cc;
+  border-radius: 3px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.keep .box .content .loginContent .registerSpread {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 60px;
+  border-top: 1px solid #e0e0e0;
+}
 header {
   width: 100%;
   height: 110px;

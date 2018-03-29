@@ -19,14 +19,18 @@ $(function () {
   $(".middleLeft .icon-jiantoushang").hide();
   // 箭头下
   $(".middleLeft .icon-jiantouxia").on("click", function () {
-    $(this).parent().height(105);
+    $(this).parent().animate({
+      height: '105px'
+    });
     $(".middleLeft .icon-jiantouxia").hide();
     $(".middleLeft .icon-jiantoushang").show();
   })
 
   // 箭头上
   $(".middleLeft .icon-jiantoushang").on("click", function () {
-    $(this).parent().height(46);
+    $(this).parent().animate({
+      height: '46px'
+    });
     $(".middleLeft .icon-jiantoushang").hide();
     $(".middleLeft .icon-jiantouxia").show();
   })
@@ -48,6 +52,7 @@ $(function () {
     $(".middleRight .time").text(dateStr);
   }());
 
+  // weekNumToStr
   function weekNumToStr(week) {
     switch (week) {
       case 0:
@@ -74,7 +79,50 @@ $(function () {
     }
   }
 
+  // 点击头部登陆
+  $("header .login").on("click", function () {
+    console.log("miao");
+    $(".keep").show();
+    // $('html,body').addClass('ovfHiden');
+
+  })
+
+  // 点击登陆背景
+  $(".keep").on("click", function () {
+    $(".keep").hide();
+    // $('html,body').removeClass('ovfHiden');
+  })
+
+  // 阻止穿透
+  $(".box").on("click", function () {
+    return false;
+  })
+
+  // 登陆表单提交
+  $(".loginContent .submit").on("click", function () {
+    var strJSON = {};
+    $.each($('.keep .loginContent').serializeArray(), function () {
+      strJSON[this.name] = this.value;
+    });
+    // 取得表达信息并打印
+    var jsonData = JSON.stringify(strJSON)
+    console.log(jsonData);
+
+    //提交ajax请求
+    $.ajax({
+      url: "http://localhost:3000/",
+      // data: {
+      //   
+      // },
+      type: "GET",
+      dataType: "jsonp",
+      // async: true,
+      // timeout: 5000,
+      success: function (data) {
+        console.log(data);
+      },
+    });
 
 
-
+  });
 })
